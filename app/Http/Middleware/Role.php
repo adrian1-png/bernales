@@ -14,12 +14,13 @@ class Role
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-    public function handle(Request $request, Closure $next, $Role)
+    public function handle(Request $request, Closure $next, $role)
     {
-        if($request->user()->role !== $Role){
-            return redirect(to: 'dashboard');
+        dd($role);
+        //if($request->user()->role !== $Role){
+         //   return redirect('dashboard');
 
-        }
+       // }
         return $next($request);
     }
 }
